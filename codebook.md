@@ -57,8 +57,8 @@ The remaining 66 variables in the dataset are the averages of multiple values co
   * Jerk - for variables that calculate rate of change of acceleration
   * Magnitude - the magnitude of the three-dimensional signal, calculated using Euclidean norm
   * Mean, StandardDeviation - denotes mean or standard deviation calculation for a given variable
-  * X,Y,z - denotes the axis (X, Y, or Z) being measured by either the accelerometer (measures acceleration along the axis) or gyroscope (measures rotation around the axis)  
-  * 
+  * X,Y,Z - denotes the axis (X, Y, or Z) being measured by either the accelerometer (measures acceleration along the axis) or gyroscope (measures rotation around the axis)  
+
 _for example: the variable 'TimeGyroJerkStandardDeviationXaxis' is a calculation of the average standard deviation for Jerk (change in acceleration) for the gyroscope along the x axis in the time domain._  
 
 _second example: the variable 'FrequencyBodyAccelerationMagnitudeMean' is a calculation of the average magnitude mean for body acceleration in the frequency domain._  
