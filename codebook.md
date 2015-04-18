@@ -5,7 +5,7 @@ date: "14 Apr 2015"
 ---
  
 ## Project Description
-Course project for Getting and Cleaning Data (session getdata-013), objective is to create and process, using tools in R, a tidy data set from data collected from Samsung Galaxy S II smartphone accelerometers carried by 30 test subjects performing six different activities.  The final product is a tidy data set that contains averages for all the mean and standard deviations computed in the initial data sets, grouped by subject and activity.  
+Course project for Getting and Cleaning Data (session getdata-013), objective is to create and process, using tools in R, a tidy data set from data collected from Samsung Galaxy S II smartphones carried by 30 test subjects performing six different activities.  The final product is a tidy data set that contains averages for all the mean and standard deviations computed in the initial data sets, grouped by subject and activity.  
 
 ##Study design and data processing  
 The study objective was to create a data set that could be used for machine learning for human activity recognition, using subjects who performed six different activities while carrying Samsung Galaxy S II smartphones on their waists. Thirty volunteers participated in the study and measurements from the accelerometers and gyroscopes on the phones were taken.  
