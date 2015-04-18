@@ -25,14 +25,14 @@ The download also contained raw inertial signals files, but I elected not to use
 ##Creating the tidy datafile  
 I created the tidy.txt file by running an R script called run_analysis.R to merge, clean, and analyze data from eight files contained in the raw data described above, which were:  
 
-  * X\_train.txt           main training dataset, containing the 561-element data vectors
-  * Y\_train.txt           activity code for each row in the training data set
-  * subject\_train.text    subject for each row of the training data set
-  * X\_test.txt            main test dataset, containing the 561-element data vectors
-  * Y\_test.txt            activity code for each row in the test data set
-  * subject\_test.txt      subject for each row of the test data set
-  * features.txt           list of the variables in the vector for each window
-  * activity\_labels.txt   table of activity codes and their corresponding activities  
+  * X\_train.txt---main training dataset, containing the 561-element data vectors
+  * Y\_train.txt---activity code for each row in the training data set
+  * subject\_train.text---subject for each row of the training data set
+  * X\_test.txt---main test dataset, containing the 561-element data vectors
+  * Y\_test.txt---activity code for each row in the test data set
+  * subject\_test.txt---subject for each row of the test data set
+  * features.txt---list of the variables in the vector for each window
+  * activity\_labels.txt---table of activity codes and their corresponding activities  
 
 The cleaning script requires the dplyr package. Since the data frames created by the files above were so large and I was working on an older personal desktop computer, the script removes all the temporary data frames it creates in order to save computer memory.  
 
