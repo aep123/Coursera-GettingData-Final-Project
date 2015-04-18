@@ -23,7 +23,7 @@ I downloaded the study dataset in .zip format from https://d396qusza40orc.cloudf
 The download also contained raw inertial signals files, but I elected not to use them as they did not contain any data that was useful for the assignment.  
 
 ##Creating the tidy datafile  
-I created the tidy.txt file by creating an R script called run_analysis.R to merge, clean, and analyze data from eight files contained in the raw data described above, which were:  
+I created the tidy.txt file by running an R script called run_analysis.R to merge, clean, and analyze data from eight files contained in the raw data described above, which were:  
 
   * X\_train.txt           main training dataset, containing the 561-element data vectors
   * Y\_train.txt           activity code for each row in the training data set
@@ -33,7 +33,7 @@ I created the tidy.txt file by creating an R script called run_analysis.R to mer
   * subject\_test.txt      subject for each row of the test data set
   * features.txt           list of the variables in the vector for each window
   * activity\_labels.txt   table of activity codes and their corresponding activities  
-  * 
+
 The cleaning script requires the dplyr package. Since the data frames created by the files above were so large and I was working on an older personal desktop computer, the script removes all the temporary data frames it creates in order to save computer memory.  
 
 More details on the script and how it runs can be found at https://github.com/aep123/Coursera-GettingData-Final-Project/blob/master/README.md.  
