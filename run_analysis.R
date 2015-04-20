@@ -78,7 +78,7 @@ rm(slim, acts)
 varnames <- colnames(slimmod)
 
 varnames <- sub("mean()", "Mean", varnames, fixed = TRUE)
-varnames <- sub("std()", "StandardDeviation", varnames, fixed = TRUE)
+varnames <- sub("std()", "Std", varnames, fixed = TRUE)
 
 varnames <- sub("-X", "Xaxis", varnames, fixed = TRUE)
 varnames <- sub("-Y", "Yaxis", varnames, fixed = TRUE)
@@ -90,15 +90,12 @@ varnames <- sub("^t", "Time", varnames)
 varnames <- sub("BodyBody", "Body", varnames, fixed = TRUE)
 varnames <- sub("BodyGyro", "Gyro", varnames, fixed = TRUE)
 
-varnames <- sub("Mag", "Magnitude", varnames, fixed = TRUE)
-varnames <- sub("Acc", "Acceleration", varnames, fixed = TRUE)
-
 colnames(slimmod) <- varnames
 
 rm(varnames)
 
 slimmod <- select(slimmod, Subject, Activity, 
-    TimeBodyAccelerationMeanXaxis:FrequencyGyroJerkMagnitudeStandardDeviation)
+    TimeBodyAccMeanXaxis:FrequencyGyroJerkMagStd)
 
 ## create a second data set with the average of each variable for each activity
 ## and each subject and write it to the file "tidy.txt"
@@ -106,8 +103,8 @@ slimmod <- select(slimmod, Subject, Activity,
 tidier <- group_by(slimmod, Subject, Activity)
 
 tidiest <-summarise_each(tidier, funs(mean), 
-        TimeBodyAccelerationMeanXaxis:FrequencyGyroJerkMagnitudeStandardDeviation)
+        TimeBodyAccMeanXaxis:FrequencyGyroJerkMagStd)
 
 tidiest <- tidiest[2:181,]
 
-write.table(tidiest, file = "tidy.txt", row.name = FALSE)
+write.table(tidiest, file = "means.txt", row.name = FALSE)
