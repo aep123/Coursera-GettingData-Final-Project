@@ -50,7 +50,7 @@ I used the `grep()` function to create the desired subset of 'comptbl', being ca
 
 Since it is desirable to have qualitative variables represented as factors or character strings for a tidy data set, I was asked to convert the activity codes in the original data set to short descriptions of the activities. Since a file containing a table with activity codes and their descriptions appeared in the original data set (activity\_labels.txt), I used that to supply the descriptive text. 
 
-I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a `left_join()` on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
+I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its undesirable '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a `left_join()` on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
 
 ### Rewording variable names
 
