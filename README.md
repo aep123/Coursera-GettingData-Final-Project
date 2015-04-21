@@ -42,7 +42,7 @@ I then took the resulting data frame (named 'comp' in the script) and turned it 
 
 ## Extracting the mean and standard deviation variables
 
-Per the instructions, I was to extract the mean and standard deviation calculations from this large dataset for further analysis. As noted above, initial review of the raw files showed that variables for these calculations had a distinctive format - containing either the string "mean()" or "std()", which would make it easy to extract them if I could keep those strings in the column name vector.
+Per the instructions, I was to extract the mean and standard deviation calculations from this large dataset for further analysis. As noted above, initial review of the raw files showed that variables for these calculations had a distinctive format - containing either the string "mean()" or "std()", which would make it easy to extract them because I had deliberately imported those strings in the column name vector when reading the files into R.
 
 I used the `grep()` function to create the desired subset of 'comptbl', being careful to stipluate the condition `fixed = TRUE` to ensure an exact match on those strings. I named the resulting table 'slim'.
 
@@ -50,13 +50,13 @@ I used the `grep()` function to create the desired subset of 'comptbl', being ca
 
 Since it is desirable to have qualitative variables represented as factors or character strings for a tidy data set, I was asked to convert the activity codes in the original data set to short descriptions of the activities. Since a file containing a table with activity codes and their descriptions appeared in the original data set (activity\_labels.txt), I used that to supply the descriptive text. 
 
-I read this file in (with `colClasses = "character"`) gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a left\_join() on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'
+I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a left\_join() on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
 
 ## Rewording variable names
 
 At this point I elected to convert the pithy variable names supplied in the initial data to something that was more readable (camelCase with limited abbreviations), and to eliminate all the reserved characters that would otherwise make it impossible to use certain dplyr functions. 
 
-These conversions were done with simple sub() statements acting on a vector of the variable names. After reattaching the vector to the 'slimmod' table, I ran a select() function on slimmod to reorder the columns by bring the activity description column next to the subject column and removing the activity code column. 
+These conversions were done with simple sub() statements acting on a vector of the variable names. After reattaching the vector to the 'slimmod' table, I ran a select() function on slimmod to reorder the columns by making the subject and activity description columns the first and second from the left, and by removing the now unnecessary activity code column. 
 
 ## Creating the final dataset
 
