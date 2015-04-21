@@ -20,7 +20,7 @@ If I had a more user-friendly names or descriptors for the subjects (such as "ma
 
 ## General Notes on the script
 
-I used RStudio for initial exploration of the dataset and for writing the run\_analysis.R script. The script requires the dplyr package as it makes use of dplyr's handy tbl\_df(), rename(), left\_join(), select(), group\_by(), and summarise\_each() functions.
+I used RStudio for initial exploration of the dataset and for writing the run\_analysis.R script. The script requires the dplyr package as it makes use of dplyr's handy `tbl\_df()`, `rename()`, `left\_join()`, `select()`, `group\_by()`, and `summarise\_each()` functions.
 
 Since some of the datasets in this exercise were so large, I used the rm() function to drop data frames, vectors, and tables once they were no longer needed by the script, in order to save RAM on my old desktop computer.
 
@@ -34,9 +34,9 @@ I elected to read features.txt with the read.table function, with conditions `co
 
 ### Merging the datasets
 
-After reading in the initial 7 datasets described above, I merged all the test files with each other, and then merged all the train files with each other using cbind(). 
+After reading in the initial 7 datasets described above, I merged all the test files with each other, and then merged all the train files with each other using `cbind()`. 
 
-For the next step I bound the merged train and test sets to each other using an rbind() function. I then created a vector of column names that included the variable names in features.txt, adding two initial names "Subject" and "ActivityCode", and added it to the merged dataset.  
+For the next step I bound the merged train and test sets to each other using an `rbind()` function. I then created a vector of column names that included the variable names in features.txt, adding two initial names "Subject" and "ActivityCode", and added it to the merged dataset.  
 
 I then took the resulting data frame (named 'comp' in the script) and turned it into a dplyr table named 'comptbl', to enable the use of dplyr functions in the following steps.
 
@@ -50,16 +50,16 @@ I used the `grep()` function to create the desired subset of 'comptbl', being ca
 
 Since it is desirable to have qualitative variables represented as factors or character strings for a tidy data set, I was asked to convert the activity codes in the original data set to short descriptions of the activities. Since a file containing a table with activity codes and their descriptions appeared in the original data set (activity\_labels.txt), I used that to supply the descriptive text. 
 
-I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a left\_join() on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
+I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a `left\_join()` on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
 
 ### Rewording variable names
 
 At this point I elected to convert the pithy variable names supplied in the initial data to something that was more readable (camelCase with limited abbreviations), and to eliminate all the reserved characters that would otherwise make it impossible to use certain dplyr functions. 
 
-These conversions were done with simple sub() statements acting on a vector of the variable names. After reattaching the vector to the 'slimmod' table, I ran a select() function on slimmod to reorder the columns by making the subject and activity description columns the first and second from the left, and by removing the now unnecessary activity code column. 
+These conversions were done with simple `sub()` statements acting on a vector of the variable names. After reattaching the vector to the 'slimmod' table, I ran a `select()` function on slimmod to reorder the columns by making the subject and activity description columns the first and second from the left, and by removing the now unnecessary activity code column. 
 
 ### Creating the final dataset
 
-I was asked to provide a final dataset that contained averages of all the variables that I had extracted, grouped by subject/activity pairings. To accomplish this I ran the dplyr functions group\_by() and summarise\_each(). 
+I was asked to provide a final dataset that contained averages of all the variables that I had extracted, grouped by subject/activity pairings. To accomplish this I ran the dplyr functions `group\_by()` and `summarise\_each()`. 
 
-Oddly, the summarise\_each function consistently added a row of NA and zero values to the top of the table it produced, so I elected to simply lop off that row before writing the final result to the 'means.txt' file, using the condition `row name = False` as dictated in the project instructions. 
+Oddly, the `summarise\_each` function consistently added a row of NA and zero values to the top of the table it produced, so I elected to simply lop off that row before writing the final result to the 'means.txt' file, using the condition `row name = False` as dictated in the project instructions. 
