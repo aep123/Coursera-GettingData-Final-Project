@@ -1,4 +1,4 @@
-## This function merges, cleans, and analyzes data contained in eight datasets 
+## This script merges, cleans, and analyzes data contained in eight datasets 
 ## (X_train.txt, y_train.txt, subject_train.txt, X_test.txt, y_test.txt, 
 ## subject_test.txt, features.txt, activity_labels.txt) that were created by 
 ## researchers measuring human activity levels using Samsung Galaxy S II smartphones.
@@ -6,11 +6,11 @@
 ## The datasets come from the website 
 ## https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
-## final output of this function is a single data set containing the average for
+## final output of this script is a single data set containing the average for
 ## each mean and standard deviation for each variable measured in the original
 ## datasets, grouped by subject and activity type.
 
-## This function requires the dplyr library in R.
+## This script requires the dplyr library in R.
 
 library(dplyr)
 
