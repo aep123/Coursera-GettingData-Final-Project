@@ -20,7 +20,7 @@ If I had a more user-friendly names or descriptors for the subjects (such as "ma
 
 ## General Notes on the script
 
-I used RStudio for initial exploration of the dataset and for writing the run\_analysis.R script. The script requires the dplyr package as it makes use of dplyr's handy `tbl\_df()`, `rename()`, `left\_join()`, `select()`, `group\_by()`, and `summarise\_each()` functions.
+I used RStudio for initial exploration of the dataset and for writing the run\_analysis.R script. The script requires the dplyr package as it makes use of dplyr's handy `tbl_df()`, `rename()`, `left_join()`, `select()`, `group_by()`, and `summarise_each()` functions.
 
 Since some of the datasets in this exercise were so large, I used the rm() function to drop data frames, vectors, and tables once they were no longer needed by the script, in order to save RAM on my old desktop computer.
 
@@ -50,7 +50,7 @@ I used the `grep()` function to create the desired subset of 'comptbl', being ca
 
 Since it is desirable to have qualitative variables represented as factors or character strings for a tidy data set, I was asked to convert the activity codes in the original data set to short descriptions of the activities. Since a file containing a table with activity codes and their descriptions appeared in the original data set (activity\_labels.txt), I used that to supply the descriptive text. 
 
-I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a `left\_join()` on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
+I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a `left_join()` on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
 
 ### Rewording variable names
 
@@ -60,6 +60,6 @@ These conversions were done with simple `sub()` statements acting on a vector of
 
 ### Creating the final dataset
 
-I was asked to provide a final dataset that contained averages of all the variables that I had extracted, grouped by subject/activity pairings. To accomplish this I ran the dplyr functions `group\_by()` and `summarise\_each()`. 
+I was asked to provide a final dataset that contained averages of all the variables that I had extracted, grouped by subject/activity pairings. To accomplish this I ran the dplyr functions `group_by()` and `summarise_each()`. 
 
-Oddly, the `summarise\_each` function consistently added a row of NA and zero values to the top of the table it produced, so I elected to simply lop off that row before writing the final result to the 'means.txt' file, using the condition `row name = False` as dictated in the project instructions. 
+Oddly, the `summarise_each` function consistently added a row of NA and zero values to the top of the table it produced, so I elected to simply lop off that row before writing the final result to the 'means.txt' file, using the condition `row name = False` as dictated in the project instructions. 
