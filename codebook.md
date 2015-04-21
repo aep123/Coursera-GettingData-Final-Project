@@ -71,7 +71,7 @@ Because the variable names are quite lengthy I decided to use camelCase to keep 
 
 * Xaxis, Yaxis, Zaxis - denotes the axis (X, Y, or Z) being measured by either the accelerometer (measures acceleration along the axis) or gyroscope (measures rotation around the axis) 
 
-_for example: the variable 'TimeGyroJerkStdXaxis' is a calculation of the average standard deviation for Jerk (change in acceleration) for the gyroscope along the x axis in the time domain._
+_for example: the variable 'TimeGyroJerkStdXaxis' is a calculation of the average standard deviation for Jerk (change in acceleration) for the gyroscope around the x axis in the time domain._
 
 _second example: the variable 'FrequencyBodyAccMagMean' is a calculation of the average magnitude mean for body acceleration in the frequency domain._
 
