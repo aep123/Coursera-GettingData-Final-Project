@@ -10,7 +10,7 @@ The raw data files were also optimized for machine learning, with the data vecto
 
 I was asked to merge the training and test sets, and to generate a final table of data that provided averages of their mean and standard deviation calculations, grouped by subject/activity pairings.
 
-## Description of the final dataset
+### Description of the final dataset
 
 The final means.txt dataset contains 180 rows (for 30 subjects x 6 activities each) in a tidy, wide format.  The first two columns of each row denote a unique subject/activity pairing, and each of the remaining 66 columns in the rest of the vector for that row contains a calculation averaging a unique variable across multiple windows for that subject/activity pairing. 
 
@@ -24,7 +24,7 @@ I used RStudio for initial exploration of the dataset and for writing the run\_a
 
 Since some of the datasets in this exercise were so large, I used the rm() function to drop data frames, vectors, and tables once they were no longer needed by the script, in order to save RAM on my old desktop computer.
 
-## Reading the datasets
+### Reading the datasets
 
 When exploring the datasets it was clear that the X\_test.txt and X\_train.txt files were the main data files, containing the 561-element calculation vectors.  In addition, it was clear that the Y\_test.txt and Y\_train.txt datasets contained activity codes that corresponded to the X files, as the values in the Y files ranged from 1 to 6 and the number of rows in the Y files matched the number of rows in the X files.  Finally, the number of rows of the subject\_train.txt and subject\_test.txt files also matched those of their corresponding Y and X files, and the values ranged from 1 to 30, which was the number of subjects in the data set per the original file documentation.
 
@@ -32,7 +32,7 @@ Further exploration revealed the features.txt file contained the variable labels
 
 I elected to read features.txt with the read.table function, with conditions `colClasses = "character"`, `fixed = TRUE`, and `encoding = "UTF-8"`) in order to ease the unpacking of variable names further down in the script. I did it this way because I had noticed that the variables I wanted to select for averaging all had the same format - "mean()" or "std()" - which separated them from other uses of the same letters (specifically "Mean", which had a different connotation in other variable names). By using the conditions outlined above, I was able to keep the (otherwise undesirable) "()" characters to make easier use of the grep() and sub() functions further down in the script.
 
-## Merging the datasets
+### Merging the datasets
 
 After reading in the initial 7 datasets described above, I merged all the test files with each other, and then merged all the train files with each other using cbind(). 
 
@@ -40,25 +40,25 @@ For the next step I bound the merged train and test sets to each other using an 
 
 I then took the resulting data frame (named 'comp' in the script) and turned it into a dplyr table named 'comptbl', to enable the use of dplyr functions in the following steps.
 
-## Extracting the mean and standard deviation variables
+### Extracting the mean and standard deviation variables
 
 Per the instructions, I was to extract the mean and standard deviation calculations from this large dataset for further analysis. As noted above, initial review of the raw files showed that variables for these calculations had a distinctive format - containing either the string "mean()" or "std()", which would make it easy to extract them because I had deliberately imported those strings in the column name vector when reading the files into R.
 
 I used the `grep()` function to create the desired subset of 'comptbl', being careful to stipluate the condition `fixed = TRUE` to ensure an exact match on those strings. I named the resulting table 'slim'.
 
-## Converting activity codes to descriptive activity names
+### Converting activity codes to descriptive activity names
 
 Since it is desirable to have qualitative variables represented as factors or character strings for a tidy data set, I was asked to convert the activity codes in the original data set to short descriptions of the activities. Since a file containing a table with activity codes and their descriptions appeared in the original data set (activity\_labels.txt), I used that to supply the descriptive text. 
 
 I read this file in (with `colClasses = "character"`), gave its columns appropriate names, converted its problematic '\_' characters to spaces, and named the resulting file 'acts'. I converted the corresponding column in the 'slim' table from numeric to character and ran a left\_join() on 'slim' and 'acts' to add the descriptive activity names to each row. I named the resulting table 'slimmod'.
 
-## Rewording variable names
+### Rewording variable names
 
 At this point I elected to convert the pithy variable names supplied in the initial data to something that was more readable (camelCase with limited abbreviations), and to eliminate all the reserved characters that would otherwise make it impossible to use certain dplyr functions. 
 
 These conversions were done with simple sub() statements acting on a vector of the variable names. After reattaching the vector to the 'slimmod' table, I ran a select() function on slimmod to reorder the columns by making the subject and activity description columns the first and second from the left, and by removing the now unnecessary activity code column. 
 
-## Creating the final dataset
+### Creating the final dataset
 
 I was asked to provide a final dataset that contained averages of all the variables that I had extracted, grouped by subject/activity pairings. To accomplish this I ran the dplyr functions group\_by() and summarise\_each(). 
 
