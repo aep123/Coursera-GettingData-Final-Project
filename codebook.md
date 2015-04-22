@@ -51,7 +51,7 @@ Each human subject in the dataset is represented by a number between 1 and 30.
 **Activity** (class = character)
 Each activity in the dataset is described simply with one or two words. The six activities represented in the dataset are laying, sitting, standing, walking, walking downstairs, and walking upstairs.
 
-****TimeBodyAccMeanXaxis, TimeBodyAccMeanYaxis, TimeBodyAccMeanZaxis** (class = numeric)
+**TimeBodyAccMeanXaxis, TimeBodyAccMeanYaxis, TimeBodyAccMeanZaxis** (class = numeric)
 
 These variables hold the average means for body acceleration (BodyAcc) in the time (Time) domain along the X, Y, and Z axes respectively.  Body acceleration itself is a calculated field that is derived by splitting an acceleration signal from the accelerometers into its component gravity and body (ie human-subject-generated) acceleration signals.
 
