@@ -14,7 +14,7 @@ I was asked to merge the training and test sets, and to generate a final table o
 
 The final means.txt dataset contains 180 rows (for 30 subjects x 6 activities each) in a tidy, wide format.  The first two columns of each row denote a unique subject/activity pairing, and each of the remaining 66 columns in the rest of the vector for that row contains a calculation averaging a unique variable across multiple windows for that subject/activity pairing. 
 
-The most difficult aspect of creating a tidy dataset here was in the choosing of variable names, as the calculations in the raw datasets had lengthy descriptors. I chose to render the variable names in camelCase to make them more readable, and to provide a full text string for some abbreviations to make them easier to grasp. A guide for the variable names can be found in my codebook (https://github.com/aep123/Coursera-GettingData-Final-Project/blob/master/codebook.md).
+One difficult aspect of creating a tidy dataset here was in the choosing of variable names, as the calculations in the raw datasets had lengthy descriptors. I chose to render the variable names in camelCase to make them more readable, and to provide a full text string for some abbreviations to make them easier to grasp. A guide for the variable names can be found in my codebook (https://github.com/aep123/Coursera-GettingData-Final-Project/blob/master/codebook.md).
 
 If I had a more user-friendly names or descriptors for the subjects (such as "male", "female", or age markers, etc) I would have included them in the final file, but the original raw data referred to subjects by number only. 
 
