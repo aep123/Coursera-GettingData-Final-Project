@@ -59,117 +59,75 @@ These variables hold the average means for body acceleration (BodyAcc) in the ti
 
 These variables contain the average means for gravity acceleration (GravityAcc) in the time (Time) domain along the X, Y, and Z axes. As noted immediately above, gravity acceleration is a calculated field derived by splitting a raw acceleration signal from the accelerometers in the smartphones worn by the subjects. 
 
-####TimeBodyAccJerkMeanXaxis
-####TimeBodyAccJerkMeanYaxis
-####TimeBodyAccJerkMeanZaxis (class = numeric)
+**TimeBodyAccJerkMeanXaxis, TimeBodyAccJerkMeanYaxis, TimeBodyAccJerkMeanZaxis** (class = numeric)
 
 These variables contain the average means for jerk (Jerk), also known as the rate of change of acceleration, for body acceleration in the time (Time) domain, along the X, Y, and Z axes respectively.
 
-####TimeGyroMeanXaxis
-####TimeGyroMeanYaxis
-####TimeGyroMeanZaxis (class = numeric)
+**TimeGyroMeanXaxis, TimeGyroMeanYaxis, TimeGyroMeanZaxis** (class = numeric)
 
 These variables hold the average means for the speed of rotation (Gyro) around the X, Y, and Z axes respectively in the time (Time) domain. These rates of rotation are themselves calculated from raw signals that come from the gyroscopes in the smartphones worn by the subjects. 
 
-####TimeGyroJerkMeanXaxis
-####TimeGyroJerkMeanYaxis
-####TimeGyroJerkMeanZaxis (class = numeric) 
+**TimeGyroJerkMeanXaxis, TimeGyroJerkMeanYaxis, TimeGyroJerkMeanZaxis** (class = numeric) 
 
 These variables contain the average means for rotational jerk (GyroJerk), aka the rate of change of acceleration around the X, Y, and Z axes respectively in the time (Time) domain. The gyrosope jerk mean is a calculated field derived from raw gyroscope signal data.
 
-####TimeBodyAccMagMean
-####TimeGravityAccMagMean
-####TimeBodyAccJerkMagMean
-####TimeGyroMagMean
-####TimeGyroJerkMagMean (class = numeric) 
+**TimeBodyAccMagMean, TimeGravityAccMagMean, TimeBodyAccJerkMagMean, TimeGyroMagMean, TimeGyroJerkMagMean** (class = numeric)
 
 The MagMean variables contain calculated average means for the magnitude (Mag) of the three-dimensional signals for body acceleration (BodyAcc), gravity acceleration (GravityAcc), body acceleration jerk (BodyAccJerk), rotation (Gyro), and rotational jerk (GyroJerk). They are all calculated in the time (Time) domain. 
 
-####FrequencyBodyAccMeanXaxis
-####FrequencyBodyAccMeanYaxis
-####FrequencyBodyAccMeanZaxis (class = numeric)
+**FrequencyBodyAccMeanXaxis, FrequencyBodyAccMeanYaxis, FrequencyBodyAccMeanZaxis** (class = numeric)
 
 These variables hold the average means for body acceleration (BodyAcc) in the frequency (Frequency) domain along the X, Y, and Z axes respectively.  Body acceleration itself is calculated by splitting a signal from the accelerometer into its component gravity and body (ie human-subject-generated) acceleration signals. Calculations in the frequency domain allow for the analysis of signals over a range of frequencies.
 
-####FrequencyBodyAccJerkMeanXaxis
-####FrequencyBodyAccJerkMeanYaxis
-####FrequencyBodyAccJerkMeanZaxis (class = numeric)
+**FrequencyBodyAccJerkMeanXaxis, FrequencyBodyAccJerkMeanYaxis, FrequencyBodyAccJerkMeanZaxis** (class = numeric)
 
 These variables contain the average means for jerk (Jerk), also known as the rate of change of acceleration, for body acceleration in the frequency (Frequency) domain, along the X, Y, and Z axes respectively.
 
-####FrequencyGyroMeanXaxis
-####FrequencyGyroMeanYaxis
-####FrequencyGyroMeanZaxis (class = numeric)
+**FrequencyGyroMeanXaxis, FrequencyGyroMeanYaxis, FrequencyGyroMeanZaxis** (class = numeric)
 
 These variables hold the average means for the speed of rotation (Gyro) around the X, Y, and Z axes respectively in the frequency (Frequency) domain. These rates of rotation are themselves calculated from raw signals that come from the gyroscopes in the smartphones worn by the subjects.
 
-####FrequencyBodyAccMagMean
-####FrequencyBodyAccJerkMagMean
-####FrequencyGyroMagMean
-####FrequencyGyroJerkMagMean (class = numeric)
+**FrequencyBodyAccMagMean, FrequencyBodyAccJerkMagMean, FrequencyGyroMagMean, FrequencyGyroJerkMagMean** (class = numeric)
 
 The MagMean variables contain calculated average means for the magnitude (Mag) of the three-dimensional signals for body acceleration (BodyAcc), body acceleration jerk (BodyAccJerk), rotation (Gyro), and rotational jerk (GyroJerk). They are all calculated in the frequency (Frequency) domain. 
 
-####TimeBodyAccStdXaxis
-####TimeBodyAccStdYaxis
-####TimeBodyAccStdZaxis (class = numeric)
+**TimeBodyAccStdXaxis, TimeBodyAccStdYaxis, TimeBodyAccStdZaxis** (class = numeric)
 
 These variables hold the average standard deviation (Std) for body acceleration (BodyAcc) in the time (Time) domain along the X, Y, and Z axes respectively.  Body acceleration itself is a calculated field that is derived by splitting an signal from the accelerometer into its component gravity and body (ie human-subject-generated) acceleration signals.
 
-####TimeGravityAccStdXaxis
-####TimeGravityAccStdYaxis
-####TimeGravityAccStdZaxis (class = numeric)
+**TimeGravityAccStdXaxis, TimeGravityAccStdYaxis, TimeGravityAccStdZaxis** (class = numeric)
 
 These variables contain the average standard deviation (Std) for gravity acceleration (GravityAcc) in the time (Time) domain along the X, Y, and Z axes. As noted immediately above, gravity acceleration is a calculated field derived by splitting a raw acceleration signal from the accelerometers in the smartphones worn by the subjects. 
 
-####TimeBodyAccJerkStdXaxis
-####TimeBodyAccJerkStdYaxis
-####TimeBodyAccJerkStdZaxis (class = numeric)
+**TimeBodyAccJerkStdXaxis, TimeBodyAccJerkStdYaxis, TimeBodyAccJerkStdZaxis** (class = numeric)
 
 These variables contain the average standard deviation (Std) for jerk (Jerk), also known as the rate of change of acceleration, for body acceleration in the time (Time) domain, along the X, Y, and Z axes respectively.
 
-####TimeGyroStdXaxis
-####TimeGyroStdYaxis
-####TimeGyroStdZaxis (class = numeric)
+**TimeGyroStdXaxis, TimeGyroStdYaxis, TimeGyroStdZaxis** (class = numeric)
 
 These variables hold the average standard deviation (Std) for the speed of rotation (Gyro) around the X, Y, and Z axes respectively in the time (Time) domain. These rates of rotation are themselves calculated from raw signals that come from the gyroscopes in the smartphones worn by the subjects. 
 
-####TimeGyroJerkStdXaxis
-####TimeGyroJerkStdYaxis
-####TimeGyroJerkStdZaxis (class = numeric) 
+**TimeGyroJerkStdXaxis, TimeGyroJerkStdYaxis, TimeGyroJerkStdZaxis** (class = numeric) 
 
 These variables contain the average standard deviation (Std) for rotational jerk (GyroJerk), aka the rate of change of acceleration around the X, Y, and Z axes respectively in the time (Time) domain. The gyrosope jerk mean is a calculated field derived from raw gyroscope signal data.
 
-####TimeBodyAccMagStd
-####TimeGravityAccMagStd
-####TimeBodyAccJerkMagStd
-####TimeGyroMagStd
-####TimeGyroJerkMagStd (class = numeric) 
+**TimeBodyAccMagStd, TimeGravityAccMagStd, TimeBodyAccJerkMagStd, TimeGyroMagStd, TimeGyroJerkMagStd** (class = numeric) 
 
 The MagStd variables contain calculated average standard deviation (Std) for the magnitude (Mag) of the three-dimensional signals for body acceleration (BodyAcc), gravity acceleration (GravityAcc), body acceleration jerk (BodyAccJerk), rotation (Gyro), and rotational jerk (GyroJerk). They are all calculated in the time (Time) domain. 
 
-####FrequencyBodyAccStdXaxis
-####FrequencyBodyAccStdYaxis
-####FrequencyBodyAccStdZaxis (class = numeric)
+**FrequencyBodyAccStdXaxis, FrequencyBodyAccStdYaxis, FrequencyBodyAccStdZaxis** (class = numeric)
 
 These variables hold the average standard deviation (Std) for body acceleration (BodyAcc) in the frequency (Frequency) domain along the X, Y, and Z axes respectively.  Body acceleration itself is calculated by splitting an acceleration signal from the accelerometers into its component gravity and body (ie human-subject-generated) acceleration signals. Calculations in the frequency domain allow for the analysis of signals over a range of frequencies.
 
-####FrequencyBodyAccJerkStdXaxis
-####FrequencyBodyAccJerkStdYaxis
-####FrequencyBodyAccJerkStdZaxis (class = numeric)
+**FrequencyBodyAccJerkStdXaxis, FrequencyBodyAccJerkStdYaxis, FrequencyBodyAccJerkStdZaxis** (class = numeric)
 
 These variables contain the average standard deviation (Std) for jerk (Jerk), also known as the rate of change of acceleration, for body acceleration in the frequency (Frequency) domain, along the X, Y, and Z axes respectively.
 
-####FrequencyGyroStdXaxis
-####FrequencyGyroStdYaxis
-####FrequencyGyroStdZaxis (class = numeric)
+**FrequencyGyroStdXaxis, FrequencyGyroStdYaxis, FrequencyGyroStdZaxis** (class = numeric)
 
 These variables hold the average standard deviation (Std) for the speed of rotation (Gyro) around the X, Y, and Z axes respectively in the frequency (Frequency) domain. These rates of rotation are themselves calculated from raw signals that come from the gyroscopes in the smartphones worn by the subjects.
 
-####FrequencyBodyAccMagStd
-####FrequencyBodyAccJerkMagStd
-####FrequencyGyroMagStd
-####FrequencyGyroJerkMagStd (class = numeric)
+**FrequencyBodyAccMagStd, FrequencyBodyAccJerkMagStd, FrequencyGyroMagStd, FrequencyGyroJerkMagStd** (class = numeric)
 
 The MagMean variables contain calculated average standard deviation (Std) for the magnitude (Mag) of the three-dimensional signals for body acceleration (BodyAcc), body acceleration jerk (BodyAccJerk), rotation (Gyro), and rotational jerk (GyroJerk). They are all calculated in the frequency (Frequency) domain. 
 
