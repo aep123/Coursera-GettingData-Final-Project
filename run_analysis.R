@@ -85,7 +85,7 @@ varnames <- sub("-Y", "Yaxis", varnames, fixed = TRUE)
 varnames <- sub("-Z", "Zaxis", varnames, fixed = TRUE)
 varnames <- sub("-", "", varnames, fixed = TRUE)
 
-varnames <- sub("^f", "Frequency", varnames)
+varnames <- sub("^f", "Freq", varnames)
 varnames <- sub("^t", "Time", varnames)
 varnames <- sub("BodyBody", "Body", varnames, fixed = TRUE)
 varnames <- sub("BodyGyro", "Gyro", varnames, fixed = TRUE)
@@ -95,7 +95,7 @@ colnames(slimmod) <- varnames
 rm(varnames)
 
 slimmod <- select(slimmod, Subject, Activity, 
-    TimeBodyAccMeanXaxis:FrequencyGyroJerkMagStd)
+    TimeBodyAccMeanXaxis:FreqGyroJerkMagStd)
 
 ## create a second data set with the average of each variable for each activity
 ## and each subject and write it to the file "tidy.txt"
@@ -103,7 +103,7 @@ slimmod <- select(slimmod, Subject, Activity,
 tidier <- group_by(slimmod, Subject, Activity)
 
 tidiest <-summarise_each(tidier, funs(mean), 
-        TimeBodyAccMeanXaxis:FrequencyGyroJerkMagStd)
+        TimeBodyAccMeanXaxis:FreqGyroJerkMagStd)
 
 tidiest <- tidiest[2:181,]
 
